@@ -6,26 +6,24 @@ class Player
     puts "0:グー, 1:チョキ, 2:パー"
     # 変数「input_hand」にプレイヤーが入力したものを取得して代入します。
       # ヒント! 「getsメソッド」を使用します。
-    input_hand = gets.to_i# input_hand =
+    # input_hand =
     # 「input_hand」(取得した値)が「0, 1, 2」のいずれかだとwhileから脱出させ、それ以外だと初めから繰り返させます。
       # ヒント! 「while」と「if」を使用します。
       # 以降の型の例に沿って実装しましょう ※実装する時場合はコメントアウトに注意しましょう
-      while true# while true
-        if input_hand == 0# if 条件を書く (「input_hand」(取得した値)が「0, 1, 2」のいずれかの場合だった場合)
-          return input_hand# 「input_hand」(取得した値)をそのまま返します。
-        elsif input_hand == 1
-          return input_hand # ヒント！ 「return」を使用します。
-        elsif input_hand == 2
-          return input_hand
-        else# else ※条件以外の場合
+      input_hand = gets.chomp
+      while true
+          unless input_hand == "0" || input_hand == "1" || input_hand == "2"
+            puts "無効な数字です"
+          else
+            return input_hand.to_i
+          end
           # 「プレイヤーに 0 ~ 2を入力させる文章」を表示させます。
-          puts "もう一度数字を入力してください。"# puts "もう一度数字を入力してください。"
-          puts "0:グー, 1:チョキ, 2:パー"# puts "0:グー, 1:チョキ, 2:パー"
-          input_hand = gets.to_i# 変数「input_hand」にプレイヤーが入力したものを取得して代入します。
+            puts "もう一度数字を入力してください。"# puts "もう一度数字を入力してください。"
+            puts "0:グー, 1:チョキ, 2:パー"# puts "0:グー, 1:チョキ, 2:パー"
+            input_hand = gets.chomp# 変数「input_hand」にプレイヤーが入力したものを取得して代入します。
+          end
         end# end if文のend
       end# end while文のend
-  end
-end
 # 敵が「0 ~ 2」の値をランダムで生成するロジックを書きます。
 class Enemy
   def hand
