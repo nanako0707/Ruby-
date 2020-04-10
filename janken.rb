@@ -13,7 +13,7 @@ class Player
       input_hand = gets.chomp
       while true
           unless input_hand == "0" || input_hand == "1" || input_hand == "2"
-            puts "無効な数字です"
+            puts "0〜2の数字を入力してください。"
           else
             return input_hand.to_i
           end
